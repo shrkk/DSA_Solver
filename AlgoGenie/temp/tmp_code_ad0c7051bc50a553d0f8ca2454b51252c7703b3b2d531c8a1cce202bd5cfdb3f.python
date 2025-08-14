@@ -1,0 +1,47 @@
+class Node:
+    def __init__(self, value=0, next=None):
+        self.value = value
+        self.next = next
+
+def reverse_linked_list(head):
+    prev = None
+    curr = head
+    while curr:
+        next_node = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next_node
+    return prev
+
+# Test cases
+# Test case 1
+node1 = Node(1)
+node2 = Node(2)
+node3 = Node(3)
+node1.next = node2
+node2.next = node3
+reversed_head1 = reverse_linked_list(node1)
+# Test case 2
+node4 = Node(4)
+reversed_head2 = reverse_linked_list(node4)
+# Test case 3
+reversed_head3 = reverse_linked_list(None)
+
+# Print reversed linked list values
+result1 = []
+while reversed_head1:
+    result1.append(reversed_head1.value)
+    reversed_head1 = reversed_head1.next
+print(result1)
+
+result2 = []
+while reversed_head2:
+    result2.append(reversed_head2.value)
+    reversed_head2 = reversed_head2.next
+print(result2)
+
+result3 = []
+while reversed_head3:
+    result3.append(reversed_head3.value)
+    reversed_head3 = reversed_head3.next
+print(result3)

@@ -1,0 +1,5 @@
+MODEL = 'gpt-3.5-turbo'
+TEXT_MENTION = 'STOP'
+WORD_DIR = 'temp'
+TIMEOUT = 120
+MAX_TURNS = 10

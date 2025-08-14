@@ -1,0 +1,31 @@
+# Test Case 1
+ll = LinkedList()
+ll.add_node(1)
+ll.add_node(2)
+ll.add_node(3)
+ll.add_node(4)
+ll.add_node(5)
+ll.reverse()
+current = ll.head
+while current:
+    print(current.data)
+    current = current.next
+
+# Test Case 2
+ll2 = LinkedList()
+ll2.add_node(3)
+ll2.add_node(5)
+ll2.reverse()
+current = ll2.head
+while current:
+    print(current.data)
+    current = current.next
+
+# Test Case 3
+ll3 = LinkedList()
+ll3.add_node(7)
+ll3.reverse()
+current = ll3.head
+while current:
+    print(current.data)
+    current = current.next

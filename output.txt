@@ -1,0 +1,28 @@
+(env-algogenie) PS C:\Users\shrey\Desktop\dsasolver> python "agent-be enhanced.py"
+========================================
+<class 'autogen_agentchat.messages.TextMessage'>
+user :  id='920d4818-fe5e-4efe-ae70-de92f7a7b1fe' source='user' models_usage=None metadata={} created_at=datetime.datetime(2025, 8, 12, 3, 3, 57, 146546, tzinfo=datetime.timezone.utc) content='Write python code to reverse a singly-linked list' type='TextMessage'
+========================================
+========================================
+<class 'autogen_agentchat.messages.TextMessage'>
+DSA_Problem_Solver_Agent :  id='4f785d77-3010-4c33-a8de-60d70bcd620f' source='DSA_Problem_Solver_Agent' models_usage=RequestUsage(prompt_tokens=215, completion_tokens=242) metadata={} created_at=datetime.datetime(2025, 8, 12, 3, 4, 2, 800239, tzinfo=datetime.timezone.utc) content='Plan:\n1. Initialize three pointers: prev to None, current to head of the linked list, and next_node to None.\n2. Traverse the linked list and for each node, update the next pointer to prev, move prev to current, current to next_node.\n3. Set the head of the linked list to prev once traversal is completed.\n\nCode:\n```python\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_linked_list(head):\n    prev = None\n    current = head\n    while current:\n        next_node = current.next\n        current.next = prev\n        prev = current\n        current = next_node\n    head = prev\n    return head\n```\n\nTest Cases:\n1. Input: 1 -> 2 -> 3 -> 4 -> 5 -> None\n   Output: 5 -> 4 -> 3 -> 2 -> 1 -> None\n\n2. Input: 1 -> 2 -> None\n   Output: 2 -> 1 -> None\n\n3. Input: 1 -> None\n   Output: 1 -> None' type='TextMessage'
+========================================
+========================================
+<class 'autogen_agentchat.messages.TextMessage'>
+CodeExecutorAgent :  id='b45c09fb-2f6e-43cd-b0e2-63745c3e9a01' source='CodeExecutorAgent' models_usage=None metadata={} created_at=datetime.datetime(2025, 8, 12, 3, 4, 3, 72858, tzinfo=datetime.timezone.utc) content='The script ran but produced no output to console. The POSIX exit code was: 0. If you were expecting output, consider revising the script to ensure content is printed to stdout.' type='TextMessage'
+========================================
+========================================
+<class 'autogen_agentchat.messages.TextMessage'>
+DSA_Problem_Solver_Agent :  id='eb2f40f6-bc3e-4b5e-a8b6-417842aaca6c' source='DSA_Problem_Solver_Agent' models_usage=RequestUsage(prompt_tokens=507, completion_tokens=247) metadata={} created_at=datetime.datetime(2025, 8, 12, 3, 4, 5, 694565, tzinfo=datetime.timezone.utc) content='Let\'s modify the code to print the reversed linked list for verification.\n\nUpdated Code:\n```python\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_linked_list(head):\n    prev = None\n    current = head\n    while current:\n        next_node = current.next\n        current.next = prev\n        prev = current\n        current = next_node\n    head = prev\n    \n    # Print the reversed linked list\n    while head:\n        print(head.val, end=\' -> \')\n        head = head.next\n    print("None")\n\n# Test Cases\nhead1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))\nreverse_linked_list(head1)  # Expected output: 5 -> 4 -> 3 -> 2 -> 1 -> None\n\nhead2 = ListNode(1, ListNode(2))\nreverse_linked_list(head2)  # Expected output: 2 -> 1 -> None\n\nhead3 = ListNode(1)\nreverse_linked_list(head3)  # Expected output: 1 -> None\n```\n\nYou can now execute this code.' type='TextMessage'
+========================================
+========================================
+<class 'autogen_agentchat.messages.TextMessage'>
+CodeExecutorAgent :  id='66650a85-cd00-44e1-b9b6-bb092ec98cc4' source='CodeExecutorAgent' models_usage=None metadata={} created_at=datetime.datetime(2025, 8, 12, 3, 4, 5, 905860, tzinfo=datetime.timezone.utc) content='5 -> 4 -> 3 -> 2 -> 1 -> None\n2 -> 1 -> None\n1 -> None\n' type='TextMessage'
+========================================
+========================================
+<class 'autogen_agentchat.messages.TextMessage'>
+DSA_Problem_Solver_Agent :  id='9aff39dc-e269-476b-821d-038172246b99' source='DSA_Problem_Solver_Agent' models_usage=RequestUsage(prompt_tokens=793, completion_tokens=1) metadata={} created_at=datetime.datetime(2025, 8, 12, 3, 4, 6, 749563, tzinfo=datetime.timezone.utc) content='STOP' type='TextMessage'
+========================================
+========================================
+<class 'autogen_agentchat.base._task.TaskResult'>
+Error: 'TaskResult' object has no attribute 'source'
